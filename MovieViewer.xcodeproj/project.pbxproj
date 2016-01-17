@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112E583B7B01A4BAC77CD7FF /* Pods_MovieViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E3C25AB8EE409181F7FA8E /* Pods_MovieViewer.framework */; };
 		B01FBC751C3D6CA400CE6588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FBC741C3D6CA400CE6588 /* AppDelegate.swift */; };
 		B01FBC7A1C3D6CA400CE6588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01FBC781C3D6CA400CE6588 /* Main.storyboard */; };
 		B01FBC7C1C3D6CA400CE6588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01FBC7B1C3D6CA400CE6588 /* Assets.xcassets */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FCAFD361331A572985C1DC2 /* Pods-MovieViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer.release.xcconfig"; sourceTree = "<group>"; };
+		67D9FFE1104F914E0A08B023 /* Pods-MovieViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		68E3C25AB8EE409181F7FA8E /* Pods_MovieViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01FBC711C3D6CA400CE6588 /* MovieViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01FBC741C3D6CA400CE6588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B01FBC791C3D6CA400CE6588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112E583B7B01A4BAC77CD7FF /* Pods_MovieViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A5CBDE91E8535E12985BDA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68E3C25AB8EE409181F7FA8E /* Pods_MovieViewer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		953863CE8A510AE6AD6E0836 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67D9FFE1104F914E0A08B023 /* Pods-MovieViewer.debug.xcconfig */,
+				5FCAFD361331A572985C1DC2 /* Pods-MovieViewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B01FBC681C3D6CA400CE6588 = {
 			isa = PBXGroup;
 			children = (
 				B01FBC731C3D6CA400CE6588 /* MovieViewer */,
 				B01FBC721C3D6CA400CE6588 /* Products */,
+				953863CE8A510AE6AD6E0836 /* Pods */,
+				2A5CBDE91E8535E12985BDA1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B01FBC831C3D6CA400CE6588 /* Build configuration list for PBXNativeTarget "MovieViewer" */;
 			buildPhases = (
+				22DABAB8B0DAFC5BFA636CCE /* Check Pods Manifest.lock */,
 				B01FBC6D1C3D6CA400CE6588 /* Sources */,
 				B01FBC6E1C3D6CA400CE6588 /* Frameworks */,
 				B01FBC6F1C3D6CA400CE6588 /* Resources */,
+				DB692C399AE29E40D3970CD4 /* Embed Pods Frameworks */,
+				3E6DAEDAA29E9F06CB7E9CCB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22DABAB8B0DAFC5BFA636CCE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3E6DAEDAA29E9F06CB7E9CCB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB692C399AE29E40D3970CD4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B01FBC6D1C3D6CA400CE6588 /* Sources */ = {
@@ -268,6 +343,7 @@
 		};
 		B01FBC841C3D6CA400CE6588 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67D9FFE1104F914E0A08B023 /* Pods-MovieViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MovieViewer/Info.plist;
@@ -279,6 +355,7 @@
 		};
 		B01FBC851C3D6CA400CE6588 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FCAFD361331A572985C1DC2 /* Pods-MovieViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MovieViewer/Info.plist;
