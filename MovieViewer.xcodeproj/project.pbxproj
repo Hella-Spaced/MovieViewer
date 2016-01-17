@@ -14,9 +14,11 @@
 		B01FBC7F1C3D6CA400CE6588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01FBC7D1C3D6CA400CE6588 /* LaunchScreen.storyboard */; };
 		B01FBC871C3D6D5200CE6588 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FBC861C3D6D5200CE6588 /* MoviesViewController.swift */; };
 		B09F984F1C3EEA4D00A681CC /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F984E1C3EEA4D00A681CC /* MovieCell.swift */; };
+		BA6ACDC7B37D8EE6580635BA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3042AC675A5461FB8B8977F5 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3042AC675A5461FB8B8977F5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCAFD361331A572985C1DC2 /* Pods-MovieViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer.release.xcconfig"; sourceTree = "<group>"; };
 		67D9FFE1104F914E0A08B023 /* Pods-MovieViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		68E3C25AB8EE409181F7FA8E /* Pods_MovieViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112E583B7B01A4BAC77CD7FF /* Pods_MovieViewer.framework in Frameworks */,
+				BA6ACDC7B37D8EE6580635BA /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				68E3C25AB8EE409181F7FA8E /* Pods_MovieViewer.framework */,
+				3042AC675A5461FB8B8977F5 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,7 +224,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
