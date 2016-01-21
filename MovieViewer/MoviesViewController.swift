@@ -8,26 +8,36 @@
 
 import UIKit
 import AFNetworking
-//import MBProgressHUD
+import MBProgressHUD
+let refreshControl = UIRefreshControl()
+let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+let request = NSURLRequest(URL: url!)
+let session = NSURLSession(
+    configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+    delegate:nil,
+    delegateQueue:NSOperationQueue.mainQueue()
+)
+
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-//    func loadDataFromNetwork() {
-//        
-//        // Display HUD right before next request is made
-//        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//        
-//        // ...
-//        
-//        let task : NSURLSessionDataTask = mySession.dataTaskWithRequest(request,
-//            completionHandler: { (data, response, error) in
-//                
-//                // Hide HUD once network request comes back (must be done on main UI thread)
-//                MBProgressHUD.hideHUDForView(self.view, animated: true)
-//                
-//                // ...
-//                
-//        });
-//        task.resume()
-//    }
+    func loadDataFromNetwork() {
+
+        // Display HUD right before next request is made
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
+        // ...
+        
+        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+            completionHandler: { (data, response, error) in
+                
+                // Hide HUD once network request comes back (must be done on main UI thread)
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                
+                // ...
+                
+        });
+        task.resume()
+    }
     @IBOutlet weak var tableView: UITableView!
     
     var movies: [NSDictionary]?
@@ -36,20 +46,22 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Initialize a UIRefreshControl
+
+        refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged);tableView.insertSubview(refreshControl, atIndex: 0)
+        
+        
+    
+        
         tableView.dataSource = self
         tableView.delegate = self
         
-        let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
-        let request = NSURLRequest(URL: url!)
-        let session = NSURLSession(
-            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-            delegate:nil,
-            delegateQueue:NSOperationQueue.mainQueue()
-        )
+        MBProgressHUD.showHUDAddedTo(self.view, animated:  true)
+        
         
         let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
             completionHandler: { (dataOrNil, response, error) in
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 if let data = dataOrNil {
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
@@ -57,14 +69,12 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                             self.movies = responseDictionary["results"] as! [NSDictionary]
                             self.tableView.reloadData()
                             
+                            
                     }
                 }
         });
         task.resume()
 
-        
-        
-        
         
         
         
@@ -107,6 +117,18 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         print("row \(indexPath.row)")
         return cell
     }
+    
+    
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+        
+        // Make network request to fetch latest data
+        
+        // Do the following when the network request comes back successfully:
+        // Update tableView data source
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+
 
     /*
     // MARK: - Navigation
