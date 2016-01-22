@@ -85,9 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MovieViewer/MBProgressHUD.framework"
+  install_framework "Pods-MovieViewer/PSTAlertController.framework"
+  install_framework "Pods-MovieViewer/PSTAlertController_HYPNetworkError.framework"
   install_framework "Pods-MovieViewer/AFNetworking.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MovieViewer/MBProgressHUD.framework"
+  install_framework "Pods-MovieViewer/PSTAlertController.framework"
+  install_framework "Pods-MovieViewer/PSTAlertController_HYPNetworkError.framework"
   install_framework "Pods-MovieViewer/AFNetworking.framework"
 fi

@@ -5,10 +5,10 @@
 //  Created by Richard Rolle on 1/6/16.
 //  Copyright © 2016 richard rolle. All rights reserved.
 //
-
 import UIKit
 import AFNetworking
 import MBProgressHUD
+import PSTAlertController_HYPNetworkError
 let refreshControl = UIRefreshControl()
 let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
 let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
@@ -38,6 +38,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         });
         task.resume()
     }
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     var movies: [NSDictionary]?
@@ -117,7 +119,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         print("row \(indexPath.row)")
         return cell
     }
-    
+
     
     func refreshControlAction(refreshControl: UIRefreshControl) {
         

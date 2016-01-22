@@ -1,0 +1,6 @@
+framework module PSTAlertController_HYPNetworkError {
+  umbrella header "PSTAlertController-HYPNetworkError-umbrella.h"
+
+  export *
+  module * { export * }
+}

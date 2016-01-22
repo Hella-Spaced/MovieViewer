@@ -2,6 +2,7 @@
 platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
+pod 'PSTAlertController-HYPNetworkError'
 inhibit_all_warnings!
 pod 'MBProgressHUD'
 target 'MovieViewer' do

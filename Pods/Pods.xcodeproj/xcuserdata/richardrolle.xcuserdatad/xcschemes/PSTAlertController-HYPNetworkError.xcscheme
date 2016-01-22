@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '94E1AC702BF9CD71DCDF22E9'
-               BlueprintName = 'Pods'
+               BlueprintIdentifier = 'EBE2D45A562F3635D6309D88'
+               BlueprintName = 'PSTAlertController-HYPNetworkError'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods.framework'>
+               BuildableName = 'PSTAlertController_HYPNetworkError.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

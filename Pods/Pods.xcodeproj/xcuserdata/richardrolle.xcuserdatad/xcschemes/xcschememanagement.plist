@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PSTAlertController-HYPNetworkError.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PSTAlertController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MovieViewer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>17C5A8977B2CFFCE1576E6FE54FA1187</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1C4B90AD514E803943F9B9C913979F6F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>79F6A1121E5F2C333DED160C73BD9523</key>
+		<key>DE0C1EF260784F1783DCD60EF0D9D4DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF33E801C52103E0AB2DAE0B07C0E13B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB0FCF19BE8D9291683BB9699EE83F78</key>
 		<dict>
 			<key>primary</key>
 			<true/>
